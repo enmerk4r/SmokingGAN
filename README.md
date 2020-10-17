@@ -1,2 +1,2 @@
-# GenerativeModeling
+# SmokingGAN
  
