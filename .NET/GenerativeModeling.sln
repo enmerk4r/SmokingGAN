@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerativeModeling.Gh", "GenerativeModeling.Gh\GenerativeModeling.Gh.csproj", "{36E0409A-C09E-419C-B0B3-7071B0D696CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerativeModeling.Io", "GenerativeModeling.Io\GenerativeModeling.Io.csproj", "{11F4F77E-7231-4005-BE85-500F77E4A487}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36E0409A-C09E-419C-B0B3-7071B0D696CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E0409A-C09E-419C-B0B3-7071B0D696CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E0409A-C09E-419C-B0B3-7071B0D696CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E0409A-C09E-419C-B0B3-7071B0D696CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F4F77E-7231-4005-BE85-500F77E4A487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F4F77E-7231-4005-BE85-500F77E4A487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F4F77E-7231-4005-BE85-500F77E4A487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F4F77E-7231-4005-BE85-500F77E4A487}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CFCD4AD-ED75-487B-A7AB-5DBE544C080E}
+	EndGlobalSection
+EndGlobal
