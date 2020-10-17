@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -63,8 +66,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Representation\BitmapToMeshComponent.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenerativeModeling.Http\GenerativeModeling.Http.csproj">
+      <Project>{a19f61d9-fc3a-4ac2-8dd3-9ccaf5737c27}</Project>
+      <Name>GenerativeModeling.Http</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GenerativeModeling.Io\GenerativeModeling.Io.csproj">
       <Project>{11f4f77e-7231-4005-be85-500f77e4a487}</Project>
       <Name>GenerativeModeling.Io</Name>

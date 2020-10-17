@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using GenerativeModeling.Http;
 using GenerativeModeling.Io;
 using Grasshopper.Kernel;
+using Newtonsoft.Json;
 using Rhino.Geometry;
 
 // In order to load the result of this wizard, you will also need to
@@ -63,12 +65,23 @@ namespace GenerativeModeling.Gh
 
             Bitmap img = ImageHelpers.ReadBitmap(imgPath);
             Bitmap style = ImageHelpers.ReadBitmap(stylePath);
+            Bitmap result;
 
+            try
+            {
+                StyleGanInput input = new StyleGanInput(style, img);
+                string computed = Transponder.Post(RoutesController.StyleTransferRoute, input);
+                StyleGanOutput output = JsonConvert.DeserializeObject<StyleGanOutput>(computed);
 
-            Bitmap output = img;
+                result = output.ToBitmap();
+            }
+            catch
+            {
+                result = default(Bitmap);
+            }
             
             
-            DA.SetData(0, output);
+            DA.SetData(0, result);
         }
 
         
