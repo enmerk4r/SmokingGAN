@@ -15,6 +15,7 @@ namespace GenerativeModeling.Http
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(route);
                 request.ContentType = "application/json";
                 request.Method = "POST";
+                request.Timeout = 1000 * 60 * 5;
                 string json = JsonConvert.SerializeObject(body);
                 using (var streamWriter = new StreamWriter(request.GetRequestStream()))
                 {

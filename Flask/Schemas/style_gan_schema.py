@@ -21,10 +21,12 @@ class StyleTransferInputSchema(Schema):
 class StyleTransferOutput(object):
     def __init__(self, result):
         self.result = result
+        print("StyleTransferOutput result", result[0:100])
 
 class StyleTransferOutputSchema(Schema):
     result = fields.String(required=True)
 
     @post_load
     def make_StyleTransferOutput(self, data, **kwargs):
+        print("StyleTransferOutputSchema result", data['result'][0:100])
         return StyleTransferOutput(data['result'])
