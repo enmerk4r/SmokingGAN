@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataExtraction\DepthMapComponent.cs" />
     <Compile Include="DataExtraction\ImageToBitmapComponent.cs" />
     <Compile Include="DataExtraction\StyleTransferComponent.cs" />
     <Compile Include="GenerativeModeling.GhInfo.cs" />

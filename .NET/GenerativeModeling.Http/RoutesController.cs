@@ -10,5 +10,6 @@ namespace GenerativeModeling.Http
     {
         public static string Server => "http://localhost:5000";
         public static string StyleTransferRoute => $"{Server}/inference/style-transfer/";
+        public static string DepthMapRoute => $"{Server}/inference/depth-map/";
     }
 }

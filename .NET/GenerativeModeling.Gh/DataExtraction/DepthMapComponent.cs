@@ -15,7 +15,7 @@ using Rhino.Geometry;
 
 namespace GenerativeModeling.Gh
 {
-    public class StyleTransferComponent : GH_Component
+    public class DepthMapComponent : GH_Component
     {
         /// <summary>
         /// Each implementation of GH_Component must provide a public 
@@ -24,9 +24,9 @@ namespace GenerativeModeling.Gh
         /// Subcategory the panel. If you use non-existing tab or panel names, 
         /// new tabs/panels will automatically be created.
         /// </summary>
-        public StyleTransferComponent()
-          : base("Style transfer", "ST",
-              "Style Transfer Between Two Images",
+        public DepthMapComponent()
+          : base("Depth Map", "DM",
+              "Extract Depth Map from image",
               Constants.CATEGORY, Constants.DATA_EXTRACTION)
         {
         }
@@ -37,7 +37,6 @@ namespace GenerativeModeling.Gh
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
             pManager.AddGenericParameter("Input Bitmap", "Input Bitmap", "Input Image Bitmap", GH_ParamAccess.item);
-            pManager.AddTextParameter("Style", "Style", "Style Checkpoint", GH_ParamAccess.item, "la_muse");
         }
 
         /// <summary>
@@ -45,7 +44,7 @@ namespace GenerativeModeling.Gh
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddGenericParameter("Output Image", "Output Image", "Output Image Bitmap", GH_ParamAccess.item);
+            pManager.AddGenericParameter("Output Bitmap", "Output Bitmap", "Output Image Bitmap", GH_ParamAccess.item);
             
         }
 
@@ -57,19 +56,16 @@ namespace GenerativeModeling.Gh
         protected override void SolveInstance(IGH_DataAccess DA)
         {
             Bitmap img = null;
-            string styleName = string.Empty;
-            
-
             DA.GetData(0, ref img);
-            DA.GetData(1, ref styleName);
+
 
             Bitmap result;
 
             try
             {
-                StyleGanInput input = new StyleGanInput(styleName, img);
-                string computed = Transponder.Post(RoutesController.StyleTransferRoute, input);
-                StyleGanOutput output = JsonConvert.DeserializeObject<StyleGanOutput>(computed);
+                DepthMapInput input = new DepthMapInput(img);
+                string computed = Transponder.Post(RoutesController.DepthMapRoute, input);
+                DepthMapOutput output = JsonConvert.DeserializeObject<DepthMapOutput>(computed);
 
                 result = output.ToBitmap();
             }
@@ -106,7 +102,7 @@ namespace GenerativeModeling.Gh
         /// </summary>
         public override Guid ComponentGuid
         {
-            get { return new Guid("e386c9ea-fc45-48e6-a772-008614960eff"); }
+            get { return new Guid("8d21a33d-21ab-4e48-ac6c-ff9d9f126bf9"); }
         }
     }
 }
