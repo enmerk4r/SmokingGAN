@@ -4,19 +4,18 @@ from io import BytesIO
 import base64
 
 class StyleTransferInput(object):
-    def __init__(self, inputImage, styleImage):
+    def __init__(self, inputImage, style):
         self.inputImage = inputImage
-        self.styleImage = styleImage
+        self.style = style
 
 class StyleTransferInputSchema(Schema):
     inputImage = fields.String(required=True)
-    styleImage = fields.String(required=True)
+    style = fields.String(required=True)
 
     @post_load
     def make_StyleTransferInput(self, data, **kwargs):
         inp = Image.open(BytesIO(base64.b64decode(data['inputImage'])))
-        stl = Image.open(BytesIO(base64.b64decode(data['styleImage'])))
-        return StyleTransferInput(inp, stl)
+        return StyleTransferInput(inp, data['style'])
 
 class StyleTransferOutput(object):
     def __init__(self, result):

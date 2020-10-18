@@ -12,6 +12,7 @@ from io import BytesIO, StringIO
 import base64
 import tensorflow as tf
 import imageio
+from marshmallow import Schema, fields, ValidationError
 
 styleGanInputSchema = StyleGanSchemata.StyleTransferInputSchema(many=False)
 styleGanResultSchema = StyleGanSchemata.StyleTransferOutputSchema(many=False)
@@ -27,6 +28,7 @@ checkpoint_dir = ".\\Checkpoints"
 def style_transfer():
     print("[POST] /inference/style-transfer/")
     json_data = request.get_json()
+
     if not json_data:
         return jsonify({'message': 'No input data provided'}), 400
 
@@ -53,7 +55,20 @@ def style_transfer():
         preds = transform.net(img_placeholder)
 
         #modelDir = checkpoint_dir + "\\StyleTransfer"
-        checkpoint_dir = "C:\\Users\\spigach\\Downloads\\la_muse.ckpt"
+        if deserialized.style == "la_muse":
+            checkpoint_dir = "Checkpoints\\StyleTransfer\\la_muse.ckpt"
+        elif deserialized.style == "rain_princess":
+            checkpoint_dir = "Checkpoints\\StyleTransfer\\rain_princess.ckpt"
+        elif deserialized.style == "scream":
+            checkpoint_dir = "Checkpoints\\StyleTransfer\\scream.ckpt"
+        elif deserialized.style == "udnie":
+            checkpoint_dir = "Checkpoints\\StyleTransfer\\udnie.ckpt"
+        elif deserialized.style == "wave":
+            checkpoint_dir = "Checkpoints\\StyleTransfer\\wave.ckpt"
+        elif deserialized.style == "wreck":
+            checkpoint_dir = "Checkpoints\\StyleTransfer\\wreck.ckpt"
+        else:
+            checkpoint_dir = "Checkpoints\\StyleTransfer\\la_muse.ckpt"
         #ckpt = tf.train.get_checkpoint_state(modelDir, latest_filename="rain_princess.ckpt.data-00000-of-00001")
         
         saver= tf.compat.v1.train.Saver()

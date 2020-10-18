@@ -48,7 +48,7 @@ namespace GenerativeModeling.Gh.DataExtraction
 
             using(var image = new Bitmap(path))
             {
-                bmp = image;
+                bmp = new Bitmap(image);
             }
 
             DA.SetData(0, bmp);

@@ -37,7 +37,7 @@ namespace GenerativeModeling.Gh
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
             pManager.AddTextParameter("Input Image", "Input Image", "Input Image Pass", GH_ParamAccess.item);
-            pManager.AddTextParameter("Style Image", "Style Image", "Style Image Pass", GH_ParamAccess.item);
+            pManager.AddTextParameter("Style", "Style", "Style Checkpoint", GH_ParamAccess.item, "la_muse");
         }
 
         /// <summary>
@@ -57,19 +57,18 @@ namespace GenerativeModeling.Gh
         protected override void SolveInstance(IGH_DataAccess DA)
         {
             string imgPath = string.Empty;
-            string stylePath = string.Empty;
+            string styleName = string.Empty;
             
 
             DA.GetData(0, ref imgPath);
-            DA.GetData(1, ref stylePath);
+            DA.GetData(1, ref styleName);
 
             Bitmap img = ImageHelpers.ReadBitmap(imgPath);
-            Bitmap style = ImageHelpers.ReadBitmap(stylePath);
             Bitmap result;
 
             try
             {
-                StyleGanInput input = new StyleGanInput(style, img);
+                StyleGanInput input = new StyleGanInput(styleName, img);
                 string computed = Transponder.Post(RoutesController.StyleTransferRoute, input);
                 StyleGanOutput output = JsonConvert.DeserializeObject<StyleGanOutput>(computed);
 

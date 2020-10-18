@@ -13,24 +13,23 @@ namespace GenerativeModeling.Io
 {
     public class StyleGanInput
     {
-        [JsonProperty("styleImage")]
-        public string StyleImage { get; set; }
+        [JsonProperty("style")]
+        public string Style { get; set; }
 
         [JsonProperty("inputImage")]
         public string InputImage { get; set; }
 
         public StyleGanInput() { }
-        public StyleGanInput(string styleImage, string inputImage)
+        public StyleGanInput(string style, string inputImage)
         {
-            this.StyleImage = styleImage;
+            this.Style = style;
             this.InputImage = inputImage;
         }
-        public StyleGanInput(Bitmap styleImage, Bitmap inputImage)
+        public StyleGanInput(string style, Bitmap inputImage)
         {
             ImageConverter converter = new ImageConverter();
             var inputBytes = (byte[])converter.ConvertTo(inputImage, typeof(byte[]));
-            var styleBytes = (byte[])converter.ConvertTo(styleImage, typeof(byte[]));
-            this.StyleImage = Convert.ToBase64String(styleBytes);
+            this.Style = style;
             this.InputImage = Convert.ToBase64String(inputBytes);
         }
     }
