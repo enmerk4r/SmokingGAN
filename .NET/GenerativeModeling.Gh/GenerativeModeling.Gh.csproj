@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="Representation\BitmapToMeshComponent.cs" />
     <Compile Include="Representation\DepthMapToMeshComponent.cs" />
+    <Compile Include="Representation\SaveBitmapComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
