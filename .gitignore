@@ -363,3 +363,5 @@ Flask/Checkpoints/StyleTransfer/udnie.ckpt.data-00000-of-00001
 Flask/Checkpoints/StyleTransfer/udnie.ckpt.index
 Flask/Checkpoints/StyleTransfer/wave.ckpt.data-00000-of-00001
 Flask/Checkpoints/StyleTransfer/wave.ckpt.index
+Flask/Checkpoints/DepthMap/model_cityscapes.index
+Flask/Checkpoints/DepthMap/model_cityscapes.data-00000-of-00001
