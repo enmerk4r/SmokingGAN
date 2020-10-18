@@ -351,3 +351,15 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+Flask/Checkpoints/StyleTransfer/la_muse.ckpt.data-00000-of-00001
+Flask/Checkpoints/StyleTransfer/la_muse.ckpt.index
+Flask/Checkpoints/StyleTransfer/rain_princess.ckpt.data-00000-of-00001
+Flask/Checkpoints/StyleTransfer/rain_princess.ckpt.index
+Flask/Checkpoints/StyleTransfer/shipwreck.ckpt.data-00000-of-00001
+Flask/Checkpoints/StyleTransfer/shipwreck.ckpt.index
+Flask/Checkpoints/StyleTransfer/the_scream.ckpt.data-00000-of-00001
+Flask/Checkpoints/StyleTransfer/the_scream.ckpt.index
+Flask/Checkpoints/StyleTransfer/udnie.ckpt.data-00000-of-00001
+Flask/Checkpoints/StyleTransfer/udnie.ckpt.index
+Flask/Checkpoints/StyleTransfer/wave.ckpt.data-00000-of-00001
+Flask/Checkpoints/StyleTransfer/wave.ckpt.index
