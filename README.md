@@ -2,7 +2,7 @@
 An experimental framework for running ML Models inside the Grasshopper / Rhino environement
 
 ## Attributions
-SmokingGAN is a Hackathon project for the 2020 AEC Tech Symposium organized by CORE Studio at Thornton Tomasetti
+SmokingGAN is a Hackathon project for the 2020 AEC Tech Symposium organized by [CORE Studio](https://www.thorntontomasetti.com/core-studio) at [Thornton Tomasetti](https://www.thorntontomasetti.com)
 
 This project has been a collaborative effort between [Mayur Mistry](https://github.com/Mistrymm7), [Sergey Pigach](https://github.com/enmerk4r), [Charlie Portelli](https://github.com/Crashnorun) and [Sergio Guindon](https://github.com/sguindon)
 
