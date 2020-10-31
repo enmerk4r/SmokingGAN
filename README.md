@@ -29,15 +29,21 @@ This is the basic architectural diagram showing the main components of the API:
  ```
  Install the necessary dependencies:
  ```
- conda install flask, numpy, imageio, marshmallow, matplotlib, scipy, functools, pillow, pandas
- conda install tensorflow=2.3.1
- conda install keras=2.4.3
+ conda install flask numpy imageio marshmallow matplotlib scipy pillow pandas
+ pip install tensorflow==2.3.1
+ pip install keras==2.4.3
+ pip install tf_slim
  ```
- 
- **Pretrained Checkpoint Files** 
- 
- 
+Download the following checkpoint files:
+
  ***Style Transfer*** - https://drive.google.com/drive/folders/0B9jhaT37ydSyRk9UX0wwX3BpMzQ
  
- 
  ***Depth Map*** - https://drive.google.com/drive/folders/0B9jhaT37ydSyRk9UX0wwX3BpMzQ
+ 
+ Place them into `Flask/Checkpoints/StyleTransfer` and `Flask/Checkpoints/DepthMap` respectively.
+ 
+ Run the server:
+ ```
+ cd GenerativeModeling/Flask
+ python MainFrame.py
+ ```
