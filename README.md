@@ -25,6 +25,13 @@ This is the basic architectural diagram showing the main components of the API:
  We recommend creating an Anaconda environment with **Python 3.7** (IMPORTANT: we've ran into serious issues with Tensorflow and Python 3.8)
  ```
  conda create --name your-env-name python=3.7
+ conda activate your-env-name
+ ```
+ Install the necessary dependencies:
+ ```
+ conda install flask, numpy, imageio, marshmallow, matplotlib, scipy, functools
+ conda install tensorflow=2.3.1
+ conda install keras=2.4.3
  ```
  
  **Pretrained Checkpoint Files** 
