@@ -15,7 +15,8 @@ This project has been a collaborative effort between [Mayur Mistry](https://gith
 ## Description
 SmokingGAN is an attempt at incorporating GANs into a Rhino / Grasshopper design workflow. The two major parts of the SmokingGAN are the Flask server exposing pre-trained checkpoints (This hackathon version currently serves [A Style GAN](https://github.com/lengstrom/fast-style-transfer) and a [Depth Map generator](https://github.com/FangGet/tf-monodepth2), but can be extended to work with any other pretrained checkpoints) and a Grasshopper plugin that accesses the Flask API and also provides functionality for converting images to meshes based on the depth information.
 
-![Flythrough](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/FlyThrough.gif)
+![2x2](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/2x2.gif)
+![Rhino](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/Rhino.gif)
 
 This is the basic architectural diagram showing the main components of the API:
 
@@ -55,9 +56,5 @@ In [Rhino's](https://www.rhino3d.com/) command line type in `GrasshopperDevelope
 Have fun:
 
 ![Grasshopper](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/Grasshopper.PNG)
-
-![Rhino](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/Rhino.gif)
-
-![2x2](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/2x2.gif)
-
+![Flythrough](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/FlyThrough.gif)
 ![Rhino Screenshot](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/RhinoScreenshot.png)
