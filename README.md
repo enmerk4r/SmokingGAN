@@ -21,6 +21,10 @@ This is the basic architectural diagram showing the main components of the API:
 
 ![Diagram](https://github.com/enmerk4r/SmokingGAN/blob/main/Images/Image%20GAN%20Flow%20Chart.png)
  
+ ## Setup
+ We recommend creating an Anaconda environment with **Python 3.7** (IMPORTANT: we've ran into serious issues with Tensorflow and Python 3.8)
+ ```conda create --name your-env-name python=3.7
+ ```
  
  **Pretrained Checkpoint Files** 
  
