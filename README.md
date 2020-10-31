@@ -21,7 +21,7 @@ This is the basic architectural diagram showing the main components of the API:
 
 ![Diagram](https://github.com/enmerk4r/SmokingGAN/blob/main/Images/Image%20GAN%20Flow%20Chart.png)
  
- ## Setup
+ ## Server Setup
  We recommend creating an Anaconda environment with **Python 3.7** (IMPORTANT: we've ran into serious issues with Tensorflow and Python 3.8)
  ```
  conda create --name your-env-name python=3.7
@@ -47,3 +47,17 @@ Download the following checkpoint files:
  cd GenerativeModeling/Flask
  python MainFrame.py
  ```
+## Grasshopper Setup
+Open and build the **GenerativeModeling** solution from the `.NET` folder
+
+In [Rhino's](https://www.rhino3d.com/) command line type in `GrasshopperDeveloperSettings`. In the dialog paste the path to the bin folder for the Visual Studio solution. Click ok and launch [Grasshopper](https://www.grasshopper3d.com/). You should see the SmokingGAN tab appear in the panel.
+
+Have fun:
+
+![Grasshopper](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/Grasshopper.PNG)
+
+![Rhino](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/Rhino.gif)
+
+![2x2](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/2x2.gif)
+
+![Rhino Screenshot](https://github.com/enmerk4r/SmokingGAN/blob/main/Assets/RhinoScreenshot.png)
