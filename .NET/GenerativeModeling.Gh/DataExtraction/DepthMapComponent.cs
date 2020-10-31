@@ -55,10 +55,10 @@ namespace GenerativeModeling.Gh
         /// to store data in output parameters.</param>
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            Bitmap img = null;
-            DA.GetData(0, ref img);
+            Bitmap tempBitmap = null;
+            DA.GetData(0, ref tempBitmap);
 
-
+            Bitmap img = new Bitmap(tempBitmap);
             Bitmap result;
 
             try
@@ -69,7 +69,7 @@ namespace GenerativeModeling.Gh
 
                 result = output.ToBitmap();
             }
-            catch
+            catch(Exception exc)
             {
                 result = default(Bitmap);
             }

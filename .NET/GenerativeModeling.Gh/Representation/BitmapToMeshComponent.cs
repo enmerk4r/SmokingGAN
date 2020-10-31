@@ -45,13 +45,15 @@ namespace GenerativeModeling.Gh.Representation
         /// <param name="DA">The DA object is used to retrieve from inputs and store in outputs.</param>
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            Bitmap bitmap = default(Bitmap);
+            Bitmap tempBitmap = default(Bitmap);
             double cellSize = 1;
             Point3d origin = default(Point3d);
 
-            DA.GetData(0, ref bitmap);
+            DA.GetData(0, ref tempBitmap);
             DA.GetData(1, ref cellSize);
             DA.GetData(2, ref origin);
+
+            Bitmap bitmap = new Bitmap(tempBitmap);
 
             Mesh preview = ImageHelpers.RenderPreview(bitmap, cellSize, origin);
 

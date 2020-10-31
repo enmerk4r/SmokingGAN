@@ -56,13 +56,14 @@ namespace GenerativeModeling.Gh
         /// to store data in output parameters.</param>
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            Bitmap img = null;
+            Bitmap tempImg = null;
             string styleName = string.Empty;
             
 
-            DA.GetData(0, ref img);
+            DA.GetData(0, ref tempImg);
             DA.GetData(1, ref styleName);
 
+            Bitmap img = new Bitmap(tempImg);
             Bitmap result;
 
             try

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using GenerativeModeling.Io;
 using Grasshopper.Kernel;
 using Rhino.Geometry;
@@ -42,18 +44,39 @@ namespace GenerativeModeling.Gh.Representation
         /// <param name="DA">The DA object is used to retrieve from inputs and store in outputs.</param>
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            Bitmap bmp = null;
+            Bitmap _bmp = null;
             string path = null;
             bool save = false;
 
-            DA.GetData(0, ref bmp);
+            DA.GetData(0, ref _bmp);
             DA.GetData(1, ref path);
             DA.GetData(2, ref save);
 
+            Bitmap bmp = new Bitmap(_bmp);
+
+            string directory = Path.GetDirectoryName(path);
+            if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+
             if (save)
             {
-                bmp.Save(path);
+                Encoder myEncoder = Encoder.Quality;
+                EncoderParameters myEncoderParameters = new EncoderParameters(1);
+                myEncoderParameters.Param[0] = new EncoderParameter(myEncoder, 100L);
+                bmp.Save(path, GetEncoderInfo("image/jpeg"), myEncoderParameters);
             }
+        }
+
+        private static ImageCodecInfo GetEncoderInfo(String mimeType)
+        {
+            int j;
+            ImageCodecInfo[] encoders;
+            encoders = ImageCodecInfo.GetImageEncoders();
+            for (j = 0; j < encoders.Length; ++j)
+            {
+                if (encoders[j].MimeType == mimeType)
+                    return encoders[j];
+            }
+            return null;
         }
 
         /// <summary>
