@@ -29,7 +29,7 @@ This is the basic architectural diagram showing the main components of the API:
  ```
  Install the necessary dependencies:
  ```
- conda install flask, numpy, imageio, marshmallow, matplotlib, scipy, functools
+ conda install flask, numpy, imageio, marshmallow, matplotlib, scipy, functools, pillow, pandas
  conda install tensorflow=2.3.1
  conda install keras=2.4.3
  ```
