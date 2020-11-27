@@ -34,6 +34,10 @@ This is the basic architectural diagram showing the main components of the API:
  pip install tensorflow==2.3.1
  pip install keras==2.4.3
  pip install tf_slim
+ pip install flask
+pip install marshmallow
+pip install imageio
+pip install matplotlib
  ```
 Download the following checkpoint files:
 
